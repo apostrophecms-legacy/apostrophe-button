@@ -1,0 +1,26 @@
+{
+  "name": "apostrophe-button",
+  "version": "0.0.1",
+  "description": "Ultra simple \"button\" component for Apostrophe2. Can be used as an area widget or singleton. Basically a style-able link.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/punkave/apostrophe-button.git"
+  },
+  "keywords": [
+    "button",
+    "apostrophe",
+    "cms"
+  ],
+  "author": "Kerry Gilbert <kerry@punkave.com> (http://punkave.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "extend":"*"
+  },
+  "bugs": {
+    "url": "https://github.com/punkave/apostrophe-button/issues"
+  }
+}

@@ -1,0 +1,21 @@
+{% extends "baseWidgetEditor.html" %}
+
+{% block widgetVars %}
+  {% set widgetClass = 'apos-button-editor' %}
+{% endblock %}
+
+{% block title %}
+  Button
+{% endblock %}
+
+{% block instructions %}
+  Enter a URL and link title.
+{% endblock %}
+
+{% block formBody %}
+  <label>Url</label>
+  <input class="apos-button-url" type="text" name="url" />
+
+  <label>Text</label>
+  <input class="apos-button-text" type="text" name="text" />
+{% endblock %}
