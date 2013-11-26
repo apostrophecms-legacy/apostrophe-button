@@ -1,12 +1,12 @@
 var extend = require('extend');
 
 module.exports = function(options, callback) {
-  return new Button(options, callback);
+  return new Construct(options, callback);
 };
 
-module.exports.Button = Button;
+module.exports.Construct = Construct;
 
-function Button(options, callback) {
+function Construct(options, callback) {
   var apos = options.apos;
   var app = options.app;
   var self = this;
@@ -33,10 +33,9 @@ function Button(options, callback) {
     label: 'Button',
     css: 'simple-button',
     icon: 'button',
-    sanitize: function(item) {
-
-    },
     render: function(data) {
+      console.log(__dirname + '/views')
+      // return apos.partial('button', data, __dirname + '/views');
       return apos.partial('button', data, self._dirs.map(function(dir) { return dir + '/views'; }) );
     }
   };
