@@ -1,6 +1,6 @@
 {
   "name": "apostrophe-button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Ultra simple \"button\" component for Apostrophe2. Can be used as an area widget or singleton. Basically a style-able link.",
   "main": "index.js",
   "scripts": {
