@@ -10,15 +10,13 @@ function Construct(options, callback) {
   var apos = options.apos;
   var app = options.app;
   var self = this;
-  self._dirs = (options.dirs || []).concat([ __dirname ]);
 
-  self.pushAsset = function(type, name, optionsArg) {
-    var options = {};
-    extend(true, options, optionsArg);
-    options.fs = __dirname;
-    options.web = '/apos-button';
-    return apos.pushAsset(type, name, options);
-  };
+
+  self._apos = apos;
+  self._app = app;
+
+  // Mix in the ability to serve assets and templates
+  apos.mixinModuleAssets(self, 'button', __dirname, options);
 
   // Include our editor template in the markup when aposTemplates is called
   self.pushAsset('template', 'buttonEditor', { when: 'user' });
@@ -33,12 +31,18 @@ function Construct(options, callback) {
     label: 'Button',
     css: 'simple-button',
     icon: 'button',
+    sanitize: function(item) {
+      item.url = apos.sanitizeUrl(item.url);
+      item.text = apos.sanitizeString(item.text);
+    },
     render: function(data) {
       console.log(__dirname + '/views')
       // return apos.partial('button', data, __dirname + '/views');
-      return apos.partial('button', data, self._dirs.map(function(dir) { return dir + '/views'; }) );
+      return self.render('button', data);
     }
   };
+
+  self.serveAssets();
 
   return setImmediate(function() { return callback(null); });
 }
