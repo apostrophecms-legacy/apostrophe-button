@@ -42,7 +42,8 @@ function Construct(options, callback) {
     }
   };
 
-  self.serveAssets();
+  // New core change allows us to skip the serve assests call
+  // self.serveAssets();
 
   return setImmediate(function() { return callback(null); });
 }
