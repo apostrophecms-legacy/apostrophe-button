@@ -24,7 +24,6 @@ function Construct(options, callback) {
   // Make sure that aposScripts and aposStylesheets summon our assets
   self.pushAsset('script', 'editor', { when: 'user' });
 
-  app.get('/apos-button/*', apos.static(__dirname + '/public'));
 
   apos.itemTypes.button = {
     widget: true,
@@ -42,8 +41,6 @@ function Construct(options, callback) {
     }
   };
 
-  // New core change allows us to skip the serve assests call
-  // self.serveAssets();
 
   return setImmediate(function() { return callback(null); });
 }
