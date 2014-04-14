@@ -34,7 +34,7 @@ function Construct(options, callback) {
       item.url = apos.sanitizeUrl(item.url);
       item.text = apos.sanitizeString(item.text);
     },
-    render: function(data) {
+    renderWidget: function(data) {
       console.log(__dirname + '/views')
       // return apos.partial('button', data, __dirname + '/views');
       return self.render('button', data);
