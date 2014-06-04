@@ -34,8 +34,8 @@ function Construct(options, callback) {
       item.url = apos.sanitizeUrl(item.url);
       item.text = apos.sanitizeString(item.text);
     },
-    render: function(data) {
-      return self.renderWidget('button', data);
+    renderWidget: function(data) {
+      return self.render('button', data);
     }
   };
 
