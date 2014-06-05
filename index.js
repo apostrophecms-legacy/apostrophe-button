@@ -35,8 +35,6 @@ function Construct(options, callback) {
       item.text = apos.sanitizeString(item.text);
     },
     renderWidget: function(data) {
-      console.log(__dirname + '/views')
-      // return apos.partial('button', data, __dirname + '/views');
       return self.render('button', data);
     }
   };
