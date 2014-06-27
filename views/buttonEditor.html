@@ -1,21 +1,25 @@
 {% extends "baseWidgetEditor.html" %}
 
-{% block widgetVars %}
-  {% set widgetClass = 'apos-button-editor' %}
+{% block modalClass %}
+  {{ super() }} apos-button-editor
+{% endblock%}
+
+{% block modalLabel %}
+  {{ __('Button') }}
 {% endblock %}
 
-{% block title %}
-  Button
-{% endblock %}
-
-{% block instructions %}
-  Enter a URL and link title.
+{% block modalInstructions %}
+  <p>{{ __('Enter a URL and link title.') }}</p>
 {% endblock %}
 
 {% block formBody %}
-  <label>Url</label>
-  <input class="apos-button-url" type="text" name="url" />
-
-  <label>Text</label>
+<fieldset class="apos-fieldset apos-fieldset-text">
+	<label>Link Text</label>
   <input class="apos-button-text" type="text" name="text" />
+</fieldset>
+
+<fieldset class="apos-fieldset apos-fieldset-text">
+  <label>Link Url</label>
+  <input class="apos-button-url" type="text" name="url" />
+</fieldset>
 {% endblock %}
